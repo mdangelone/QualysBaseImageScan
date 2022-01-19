@@ -1,4 +1,4 @@
-# Python script https://kube-jenkins.inday.io/vuln-mgmt/job/Bare%20Metal%20Base%20Image%20Scan/
+# Python script
 # Initiate Qualys Scan from target IP and Jira ticket.
 # Download and parse the Qualys report to search for sev 4 and 5 vulns
 # Attach report to jira ticket and add comment about next step
