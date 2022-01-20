@@ -70,19 +70,20 @@ def parseReport():
 
 
 def qualysLaunchScan(key, ip):
-  match = re.search(r"INF-\d+", key)
+  #mach the jira project name
+  match = re.search(r"<type your projectname here> -\d+", key)
   if match:
     pass
   else:
     sys.exit("INVALID Jira Ticket Number")
     
   if ipaddress.ip_address(ip) in ipaddress.ip_network('10.0.0.0/8'):
-      scanner_name = 'pdx_eng'
-  elif ipaddress.ip_address(ip) in ipaddress.ip_network('10.140.0.0/16'):
-      scanner_name = 'pdx-eng-az'
+      scanner_name = '<type your scanner here>'
+  elif ipaddress.ip_address(ip) in ipaddress.ip_network('10.1.1.0/16'):
+      scanner_name = '<type your scanner here>'
   else:
       print("INVALID IP ADDRESS")
-      sys.exit("The IP address is not in a valid range: '10.96.0.0/16' or '10.140.0.0/16'")
+      sys.exit("The IP address is not in a valid range: '10.0.0.0/16' or '10.0.0.0/16'")
 
   launchpayload={'action': 'launch',
   'scan_title': key,
